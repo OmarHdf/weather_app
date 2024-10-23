@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <h2>{{ error }}</h2>
+        {% else %}
+            <h2>Weather in {{ weather.name }}</h2>
+            <p>Temperature: {{ weather.main.temp }}°C</p>
+            <p>Weather: {{ weather.weather[0].description }}</p>
+            <p>Humidity: {{ weather.main.humidity }}%</p>
+            <p>Wind Speed: {{ weather.wind.speed }} m/s</p>
+        {% endif %}
+        <a href="/">Back</a>
+    </div>
+	<footer>
+        <p>&copy; 2024 Omar El Hedfi. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
